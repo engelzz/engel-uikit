@@ -2,7 +2,6 @@ import type { Config } from 'tailwindcss';
 import twAnimate from 'tailwindcss-animate';
 
 const content = ['./src/**/*.{ts,tsx}',];
-
 if (process.env.NODE_ENV === 'production') {
   content.push('!./src/**/*.stories.{ts,tsx}');
 }
