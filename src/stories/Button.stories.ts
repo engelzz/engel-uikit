@@ -7,6 +7,28 @@ const meta = {
   component: Button,
   tags: ['autodocs'],
   args: { onClick: fn() },
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean',
+          detail: "'true' | 'false'",
+        },
+        defaultValue: {
+          detail: 'false'
+        },
+      }
+    },
+    size: {
+      options: ['default', 'sm', 'lg', 'icon'],
+      control: 'select',
+    },
+    variant: {
+      options: ['default', 'destructive', 'ghost', 'link', 'secondary', 'outline'],
+      control: 'select',
+    },
+  }
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -29,6 +51,12 @@ export const Destructive: Story = {
 export const Ghost: Story = {
   args: {
     children: 'Buttom',
+    variant: 'ghost',
+  },
+};
+
+export const Loading: Story = {
+  args: {
     variant: 'ghost',
   },
 };
